@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATION OF CORONA CASES</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" parseInt(egrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" parseInt(egrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" parseInt(egrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" parseInt(egrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div>
+                    <h1>CORONA CASE CALCULATOR</h1>
+                    </div>
+                    <div class="form-group">
+                        Total no. of Infected people: <input class="form-control" type="number" name="t1" id="t1" value=""
+                        placeholder="Enter the value" />
+                    </div>
+    
+                    <div class="form-group">
+                        Total no. of Recovered people: <input class="form-control" type="number" name="t2" id="t2" value=""
+                        placeholder="Enter the value" />
+                    </div>
+    
+                    <div class="form-group">
+                        Total no. of Death: <input class="form-control" type="number" name="t3" id="t3" value=""
+                        placeholder="Enter the value" />
+                    </div>
+    
+                    <div class="form-group">
+                        Total no. of Active Cases: <input class="form-control" type="number" name="t4" id="t4" value=""
+                        placeholder="Enter the value" />
+                    </div>
+                </form>  
+            </div>
+           
+        </div>
+        <button onclick="percentage()">Calculate Percentage</button>
+        <script>
+            function percentage(){
+                var total=parseInt(document.getElementById("t1").value);
+                var recovered=parseInt(document.getElementById("t2").value);
+                var death=parseInt(document.getElementById("t3").value);
+                var active=parseInt(document.getElementById("t4").value);
+        
+                var recP=(recovered/total)*100;
+                var deathP=(death/total)*100;
+                var activeP=(active/total)*100;
+        
+                document.getElementById("rP").innerHTML=recP.toFixed(2)+ "%";
+                document.getElementById("dP").innerHTML=deathP.toFixed(2)+ "%";
+                document.getElementById("aP").innerHTML=activeP.toFixed(2)+ "%";
+                }
+        </script>
+        <br>
+            <p>Recovered Percentage:</p> <p id="rP"></p>
+            <p>Death Percentage:</p><p id="dP"></p>
+            <p>Active Percentage:</p><p id="aP"></p>
+            
+    </div>
+    
+</body>
+</html>
